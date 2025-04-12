@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tin tức - CleanFresh</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./styles/news.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -12,7 +12,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h1>CleanFresh</h1>
+                <img src="./Images/Logo.jpg" alt="Logo Asahi">
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Trang chủ</a></li>
@@ -23,7 +23,10 @@
             </ul>
             <div class="nav-icons">
                 <a href="#"><i class="fas fa-search"></i></a>
-                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="gio-hang.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
                 <a href="#"><i class="fas fa-user"></i></a>
             </div>
         </nav>
@@ -39,43 +42,46 @@
             <div class="news-grid">
                 <!-- Featured Article -->
                 <article class="featured-article">
-                    <img src="images/news1.jpg" alt="Bài viết nổi bật">
+                    <img src="https://i1-giadinh.vnecdn.net/2024/11/25/lua-chon-1-1-4887-1732508936.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=RDO6k5a_iOYUZZjc7ROI-g" alt="Bài viết nổi bật">
                     <div class="article-content">
                         <span class="article-date">15/03/2024</span>
                         <h2>Cách chọn nước giặt phù hợp cho gia đình bạn</h2>
-                        <p>Bài viết này sẽ giúp bạn hiểu rõ hơn về các tiêu chí chọn nước giặt phù hợp với nhu cầu của gia đình...</p>
-                        <a href="#" class="read-more">Đọc thêm</a>
+                        <p>
+                            Ngồi từ sáng tới chiều bán được 4 ngàn tiền nước đá lẻ với 3 gói thuốc lá, làm sao đủ sống', bà bán tạp hóa than với tôi.
+                            Hôm qua tôi qua nhà người hàng xóm là chủ tiệm tạp hóa ngồi chơi. Đang ngồi trò chuyện thì có một xe tải chở hàng đi tiếp thị đến. Người nhân viên nhanh nhảu giới thiệu một loại nước giặt xả...
+                        </p>
+                        <a href="https://vnexpress.net/ba-ban-tap-hoa-dep-tiem-vi-con-loc-tui-nuoc-giat-cung-mua-online-4808955.html" class="read-more">Đọc thêm</a>
                     </div>
                 </article>
 
                 <!-- Regular Articles -->
                 <article class="news-article">
-                    <img src="images/news2.jpg" alt="Tin tức 1">
+                    <img src="https://i1-giadinh.vnecdn.net/2022/11/24/Hi-nh-ba-i-PR-7994-1669253803.png?w=1020&h=0&q=100&dpr=1&fit=crop&s=Bq65wNlJ613gHjT5YNsQ7g" alt="Tin tức 1">
                     <div class="article-content">
                         <span class="article-date">10/03/2024</span>
-                        <h3>CleanFresh ra mắt dòng sản phẩm mới</h3>
-                        <p>Dòng sản phẩm mới với công thức cải tiến, thân thiện với môi trường...</p>
-                        <a href="#" class="read-more">Đọc thêm</a>
+                        <h3>Nước giặt kháng khuẩn giúp bảo vệ gia đình</h3>
+                        <p>Nhiều người nội trợ ưu tiên nước giặt ứng dụng công nghệ kháng khuẩn của On1 vì quần áo luôn sạch, bảo vệ sức khỏe gia đình...</p>
+                        <a href="https://vnexpress.net/nuoc-giat-khang-khuan-giup-bao-ve-gia-dinh-4537125.html" class="read-more">Đọc thêm</a>
                     </div>
                 </article>
 
                 <article class="news-article">
-                    <img src="images/news3.jpg" alt="Tin tức 2">
+                    <img src="https://i1-kinhdoanh.vnecdn.net/2021/09/06/AQUA-5523-1630926202.png?w=1020&h=0&q=100&dpr=1&fit=crop&s=P-6pN8Vb7DnVJGyPL4slpQ" alt="Tin tức 2">
                     <div class="article-content">
                         <span class="article-date">05/03/2024</span>
-                        <h3>Mẹo giặt quần áo trắng sạch như mới</h3>
-                        <p>Những bí quyết giúp quần áo trắng luôn tươi mới và sạch sẽ...</p>
-                        <a href="#" class="read-more">Đọc thêm</a>
+                        <h3>Mua máy giặt Aqua online nhận nước giặt đến 6 tháng</h3>
+                        <p>Người dùng khi mua online máy giặt lồng ngang Aqua tại hệ thống các siêu thị điện máy được tặng 3-6 tháng sử dụng nước giặt Omo từ ngày 1/9-30/9...</p>
+                        <a href="https://vnexpress.net/mua-may-giat-aqua-online-nhan-nuoc-giat-den-6-thang-4351961.html" class="read-more">Đọc thêm</a>
                     </div>
                 </article>
 
                 <article class="news-article">
-                    <img src="images/news4.jpg" alt="Tin tức 3">
+                    <img src="https://i1-giadinh.vnecdn.net/2017/05/16/image1JPG-1494920652-7761-1494920671.jpg?w=500&h=300&q=100&dpr=2&fit=crop&s=y7gJ-MooyOeusyxafHs3IA" alt="Tin tức 3">
                     <div class="article-content">
                         <span class="article-date">01/03/2024</span>
-                        <h3>Xu hướng sử dụng sản phẩm thân thiện môi trường</h3>
-                        <p>Xu hướng mới trong việc lựa chọn các sản phẩm chăm sóc gia đình...</p>
-                        <a href="#" class="read-more">Đọc thêm</a>
+                        <h3>Chọn nước giặt sạch, dịu nhẹ với da tay</h3>
+                        <p>Các loại nước giặt trung tính có độ pH bằng 7 giúp cân bằng độ ẩm, giữ cho lớp màng acid trên da tay khoẻ mạnh hơn...</p>
+                        <a href="https://vnexpress.net/chon-nuoc-giat-sach-diu-nhe-voi-da-tay-3570313.html" class="read-more">Đọc thêm</a>
                     </div>
                 </article>
             </div>
@@ -95,26 +101,27 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Về CleanFresh</h3>
+                <h3>Về Asahi</h3>
                 <p>Chúng tôi cam kết mang đến những sản phẩm chất lượng nhất cho gia đình bạn.</p>
             </div>
             <div class="footer-section">
                 <h3>Liên hệ</h3>
-                <p>Email: info@cleanfresh.com</p>
-                <p>Điện thoại: 0123 456 789</p>
+                <p>Email: thaibinh609@gmail.com</p>
+                <p>Điện thoại: 0968 999 155 - 0389 473 699</p>
             </div>
             <div class="footer-section">
                 <h3>Theo dõi chúng tôi</h3>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/thaibinh.donghung#"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/thaibinh.donghung#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/thaibinh.donghung#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 CleanFresh. All rights reserved.</p>
+            <p>&copy; 2025 Asahi. All rights reserved.</p>
         </div>
     </footer>
+    <script src="js/cart.js"></script>
 </body>
 </html> 

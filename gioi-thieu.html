@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giới thiệu - CleanFresh</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./styles/about.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -12,7 +12,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h1>CleanFresh</h1>
+                <img src="./Images/Logo.jpg" alt="Logo Asahi">
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Trang chủ</a></li>
@@ -23,7 +23,10 @@
             </ul>
             <div class="nav-icons">
                 <a href="#"><i class="fas fa-search"></i></a>
-                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="gio-hang.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
                 <a href="#"><i class="fas fa-user"></i></a>
             </div>
         </nav>
@@ -32,17 +35,49 @@
     <main>
         <section class="about-section">
             <div class="about-header">
-                <h1>Về CleanFresh</h1>
+                <h1>Về Asahi</h1>
                 <p>Chúng tôi cam kết mang đến những sản phẩm chất lượng nhất</p>
             </div>
 
             <div class="about-content">
                 <div class="about-image">
-                    <img src="images/about-us.jpg" alt="Về CleanFresh">
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-slide">
+                                <img src="./Images/Contact/NhaMay1.jpg.JPG" alt="Về Asahi 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="./Images/Contact/NhaMay2.jpg.JPG" alt="Về Asahi 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="./Images/Contact/NhaMay3.jpg.JPG" alt="Về Asahi 3">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="./Images/Contact/NhaMay4.jpg.JPG" alt="Về Asahi 3">
+                            </div>
+                        </div>
+                        <button class="carousel-button prev">&#10094;</button>
+                        <button class="carousel-button next">&#10095;</button>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-text">
                     <h2>Câu chuyện của chúng tôi</h2>
-                    <p>CleanFresh được thành lập với sứ mệnh mang đến những sản phẩm nước giặt chất lượng cao, an toàn cho sức khỏe và thân thiện với môi trường. Với hơn 10 năm kinh nghiệm trong ngành, chúng tôi tự hào là một trong những thương hiệu hàng đầu về các sản phẩm chăm sóc gia đình.</p>
+                    <p>
+                        Nước giặt đến từ xứ sở hoa anh đào được rất nhiều chị em yêu thích, sử dụng vì mùi hương dễ chịu, khả năng đánh bay vết bẩn tốt và giá cả phải chăng. Có khả năng tạo và giữ mùi thơm cả ngày cho quần áo.
+
+Sản phẩm diệt khuẩn rất tốt lên đến 99% các chủng vi khuẩn trên bề mặt vải.
+
+Khi được giặt bằng loại nước giặt của hãng Boshido, quần áo của bạn sẽ có một lớp màn PolyShield tự nhiên để kháng mọi vết bẩn cứng đầu.
+
+Làm mềm vải tốt nên có thể thay thế cả nước xả vải.
+
+Không gây kích ứng, an toàn dịu nhẹ với làn da người lớn lẫn trẻ sơ sinh.
+                    </p>
                     
                     <h2>Tầm nhìn</h2>
                     <p>Chúng tôi hướng đến việc trở thành thương hiệu toàn cầu về các sản phẩm chăm sóc gia đình, luôn đặt chất lượng và sự hài lòng của khách hàng lên hàng đầu.</p>
@@ -74,17 +109,17 @@
                 <div class="team-grid">
                     <div class="team-member">
                         <img src="images/team1.jpg" alt="Giám đốc">
-                        <h3>Nguyễn Văn A</h3>
+                        <h3>NHÀ TÀI TRỢ ĐỨC HOÀN</h3>
                         <p>Giám đốc điều hành</p>
                     </div>
                     <div class="team-member">
                         <img src="images/team2.jpg" alt="Trưởng phòng R&D">
-                        <h3>Trần Thị B</h3>
+                        <h3>BÙI VĂN HỘI</h3>
                         <p>Trưởng phòng R&D</p>
                     </div>
                     <div class="team-member">
                         <img src="images/team3.jpg" alt="Trưởng phòng Marketing">
-                        <h3>Lê Văn C</h3>
+                        <h3>NGUYỄN VĂN ĐỨC</h3>
                         <p>Trưởng phòng Marketing</p>
                     </div>
                 </div>
@@ -95,26 +130,28 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Về CleanFresh</h3>
+                <h3>Về Asahi</h3>
                 <p>Chúng tôi cam kết mang đến những sản phẩm chất lượng nhất cho gia đình bạn.</p>
             </div>
             <div class="footer-section">
                 <h3>Liên hệ</h3>
-                <p>Email: info@cleanfresh.com</p>
-                <p>Điện thoại: 0123 456 789</p>
+                <p>Email: thaibinh609@gmail.com</p>
+                <p>Điện thoại: 0968 999 155 - 0389 473 699</p>
             </div>
             <div class="footer-section">
                 <h3>Theo dõi chúng tôi</h3>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/thaibinh.donghung#"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/thaibinh.donghung#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/thaibinh.donghung#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 CleanFresh. All rights reserved.</p>
+            <p>&copy; 2025 Asahi. All rights reserved.</p>
         </div>
     </footer>
+    <script src="js/about.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 </html> 

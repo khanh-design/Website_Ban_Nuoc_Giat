@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nước Giặt Asahi</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./styles/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -23,7 +23,10 @@
             </ul>
             <div class="nav-icons">
                 <a href="#"><i class="fas fa-search"></i></a>
-                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="gio-hang.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
                 <a href="#"><i class="fas fa-user"></i></a>
             </div>
         </nav>
@@ -43,69 +46,92 @@
         <section class="featured-products">
             <h2>Sản phẩm nổi bật</h2>
             <div class="product-grid">
-                <div class="product-card">
-                    <img src="./Images/NuocGiat/HuongHoa.jpg.JPG" alt="Nước giặt hương hoa">
+                <div class="product-card" data-product-id="1">
+                    <a href="chi-tiet-san-pham.html?id=1">
+                        <img src="./Images/NuocGiat/HuongHoa.jpg.JPG" alt="Nước giặt hương hoa">
+                    </a>
                     <div class="product-info">
-                        <h3>Nước giặt hương hoa</h3>
+                        <h3><a href="chi-tiet-san-pham.html?id=1">Nước giặt hương hoa</a></h3>
                         <p class="product-description">Nước giặt với hương thơm hoa tươi mát, giúp quần áo luôn thơm tho và sạch sẽ</p>
                         <p class="product-price">120.000đ</p>
-                        <button class="add-to-cart">Thêm vào giỏ</button>
+                        <div class="product-actions">
+                            <a href="chi-tiet-san-pham.html?id=1" class="view-details-btn">Xem chi tiết</a>
+                            <a href="gio-hang.html" class="add-to-cart" data-product-id="1" onclick="addToCart(1); return false;">Thêm vào giỏ</a>
+                        </div>
                     </div>
                 </div>
-                <div class="product-card">
-                    <img src="./Images/NuocLauSan/HuongHoaLy.jpg.JPG" alt="Nước lau sàn hương hoa ly">
+                <div class="product-card" data-product-id="2">
+                    <a href="chi-tiet-san-pham.html?id=2">
+                        <img src="./Images/NuocLauSan/HuongHoaLy.jpg.JPG" alt="Nước lau sàn hương hoa ly">
+                    </a>
                     <div class="product-info">
-                        <h3>Nước lau sàn hương hoa ly</h3>
+                        <h3><a href="chi-tiet-san-pham.html?id=2">Nước lau sàn hương hoa ly</a></h3>
                         <p class="product-description">Nước lau sàn với hương thơm hoa ly dịu nhẹ, làm sạch và khử mùi hiệu quả</p>
-                        <p class="product-price">85.000đ</p>
-                        <button class="add-to-cart">Thêm vào giỏ</button>
+                        <p class="product-price">120.000đ</p>
+                        <div class="product-actions">
+                            <a href="chi-tiet-san-pham.html?id=2" class="view-details-btn">Xem chi tiết</a>
+                            <a href="gio-hang.html" class="add-to-cart" data-product-id="2" onclick="addToCart(2); return false;">Thêm vào giỏ</a>
+                        </div>
                     </div>
                 </div>
-                <div class="product-card">
-                    <img src="./Images/NuocRuaChen/HuongChanh.jpg.JPG" alt="Nước rửa chén hương chanh">
+                <div class="product-card" data-product-id="3">
+                    <a href="chi-tiet-san-pham.html?id=3">
+                        <img src="./Images/NuocRuaChen/HuongChanh.jpg.JPG" alt="Nước rửa chén hương chanh">
+                    </a>
                     <div class="product-info">
-                        <h3>Nước rửa chén hương chanh</h3>
+                        <h3><a href="chi-tiet-san-pham.html?id=3">Nước rửa chén hương chanh</a></h3>
                         <p class="product-description">Nước rửa chén với hương chanh tươi mát, làm sạch dầu mỡ nhanh chóng</p>
-                        <p class="product-price">65.000đ</p>
-                        <button class="add-to-cart">Thêm vào giỏ</button>
+                        <p class="product-price">120.000đ</p>
+                        <div class="product-actions">
+                            <a href="chi-tiet-san-pham.html?id=3" class="view-details-btn">Xem chi tiết</a>
+                            <a href="gio-hang.html" class="add-to-cart" data-product-id="3" onclick="addToCart(3); return false;">Thêm vào giỏ</a>
+                        </div>
                     </div>
                 </div>
-                <div class="product-card">
-                    <img src="./Images/NuocLauSan/Loai_1L/HuongQue_1L.JPG" alt="Nước lau sàn hương quế">
+                <div class="product-card" data-product-id="4">
+                    <a href="chi-tiet-san-pham.html?id=4">
+                        <img src="./Images/NuocLauSan/Loai_1L/HoaLy_1L.JPG" alt="Nước lau sàn hương hoa ly">
+                    </a>
                     <div class="product-info">
-                        <h3>Nước lau sàn hương quế</h3>
-                        <p class="product-description">Nước lau sàn với hương quế ấm áp, khử khuẩn và tạo không gian thư giãn</p>
-                        <p class="product-price">95.000đ</p>
-                        <button class="add-to-cart">Thêm vào giỏ</button>
+                        <h3><a href="chi-tiet-san-pham.html?id=4">Nước lau sàn hương hoa ly</a></h3>
+                        <p class="product-description">Nước lau sàn với hương hoa ly dịu nhẹ, làm sạch và khử mùi hiệu quả</p>
+                        <p class="product-price">50.000đ</p>
+                        <div class="product-actions">
+                            <a href="chi-tiet-san-pham.html?id=4" class="view-details-btn">Xem chi tiết</a>
+                            <a href="gio-hang.html" class="add-to-cart" data-product-id="4" onclick="addToCart(4); return false;">Thêm vào giỏ</a>
+                        </div>
                     </div>
                 </div>
             </div>
+            <a href="san-pham.html" class="view-more">Xem thêm sản phẩm</a>
         </section>
-    </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Về Asahi</h3>
-                <p>Chúng tôi cam kết mang đến những sản phẩm chất lượng nhất cho gia đình bạn.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Liên hệ</h3>
-                <p>Email: info@Asahi.com</p>
-                <p>Điện thoại: 0123 456 789</p>
-            </div>
-            <div class="footer-section">
-                <h3>Theo dõi chúng tôi</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Về Asahi</h3>
+                    <p>Chúng tôi cam kết mang đến những sản phẩm chất lượng nhất cho gia đình bạn.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p>Email: thaibinh609@gmail.com</p>
+                    <p>Điện thoại: 0968 999 155 - 0389 473 699</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Theo dõi chúng tôi</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/thaibinh.donghung#"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/thaibinh.donghung#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/thaibinh.donghung#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Asahi. All rights reserved.</p>
-        </div>
-    </footer>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Asahi. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+    <script src="js/cart.js"></script>
 </body>
 </html>
