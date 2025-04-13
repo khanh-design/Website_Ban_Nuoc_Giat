@@ -1,21 +1,32 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Lấy tất cả các sản phẩm
     const products = document.querySelectorAll('.product-card');
-    const productsPerPage = 4;
+    const productsPerPage = 8;
     let currentPage = 1;
     let currentCategory = 'all';
 
+    // Hàm đếm số sản phẩm theo danh mục
+    function countProductsByCategory(category) {
+        return Array.from(products).filter(product => 
+            category === 'all' || product.getAttribute('data-category') === category
+        ).length;
+    }
+
     // Hàm hiển thị sản phẩm theo trang và danh mục
     function showProducts(page, category) {
+        const filteredProducts = Array.from(products).filter(product => 
+            category === 'all' || product.getAttribute('data-category') === category
+        );
+        
         const start = (page - 1) * productsPerPage;
         const end = start + productsPerPage;
         
-        products.forEach((product, index) => {
-            const productCategory = product.getAttribute('data-category');
-            const isVisible = (category === 'all' || productCategory === category) && 
-                            index >= start && index < end;
-            
-            product.style.display = isVisible ? 'block' : 'none';
+        products.forEach(product => {
+            product.style.display = 'none';
+        });
+        
+        filteredProducts.slice(start, end).forEach(product => {
+            product.style.display = 'block';
         });
     }
 
@@ -26,7 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const pageNumbers = document.querySelectorAll('.pagination-numbers .pagination-btn');
 
     function updatePagination() {
-        const totalPages = Math.ceil(products.length / productsPerPage);
+        const totalProducts = countProductsByCategory(currentCategory);
+        const totalPages = Math.ceil(totalProducts / productsPerPage);
         
         // Cập nhật trạng thái nút prev/next
         prevBtn.disabled = currentPage === 1;
@@ -45,7 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (this.classList.contains('prev')) {
                 if (currentPage > 1) currentPage--;
             } else if (this.classList.contains('next')) {
-                if (currentPage < Math.ceil(products.length / productsPerPage)) currentPage++;
+                const totalProducts = countProductsByCategory(currentCategory);
+                const totalPages = Math.ceil(totalProducts / productsPerPage);
+                if (currentPage < totalPages) currentPage++;
             } else {
                 currentPage = parseInt(this.textContent);
             }
