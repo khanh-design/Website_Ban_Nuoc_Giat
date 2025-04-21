@@ -79,4 +79,39 @@ document.addEventListener('DOMContentLoaded', function() {
         // Redirect to checkout page
         window.location.href = 'gio-hang.html';
     });
+});
+
+// Search functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = document.getElementById('searchInput');
+    const searchToggle = document.getElementById('searchToggle');
+    const searchContainer = document.querySelector('.search-container');
+
+    // Toggle search bar visibility
+    searchToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        searchContainer.classList.toggle('active');
+        if (searchContainer.classList.contains('active')) {
+            searchInput.focus();
+        }
+    });
+
+    // Handle search form submission
+    searchForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        
+        if (searchTerm) {
+            // Redirect to products page with search query
+            window.location.href = `san-pham.html?search=${encodeURIComponent(searchTerm)}`;
+        }
+    });
+
+    // Close search bar when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!searchContainer.contains(e.target) && e.target !== searchToggle) {
+            searchContainer.classList.remove('active');
+        }
+    });
 }); 

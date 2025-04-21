@@ -4,19 +4,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const productsPerPage = 8;
     let currentPage = 1;
     let currentCategory = 'all';
+    let currentSearch = '';
 
-    // Hàm đếm số sản phẩm theo danh mục
-    function countProductsByCategory(category) {
-        return Array.from(products).filter(product => 
-            category === 'all' || product.getAttribute('data-category') === category
-        ).length;
+    // Hàm đếm số sản phẩm theo danh mục và từ khóa tìm kiếm
+    function countProductsByCategoryAndSearch(category, search) {
+        return Array.from(products).filter(product => {
+            const matchesCategory = category === 'all' || product.getAttribute('data-category') === category;
+            const matchesSearch = !search || 
+                product.querySelector('h3').textContent.toLowerCase().includes(search) ||
+                product.querySelector('.product-description').textContent.toLowerCase().includes(search);
+            return matchesCategory && matchesSearch;
+        }).length;
     }
 
-    // Hàm hiển thị sản phẩm theo trang và danh mục
-    function showProducts(page, category) {
-        const filteredProducts = Array.from(products).filter(product => 
-            category === 'all' || product.getAttribute('data-category') === category
-        );
+    // Hàm hiển thị sản phẩm theo trang, danh mục và từ khóa tìm kiếm
+    function showProducts(page, category, search) {
+        const filteredProducts = Array.from(products).filter(product => {
+            const matchesCategory = category === 'all' || product.getAttribute('data-category') === category;
+            const matchesSearch = !search || 
+                product.querySelector('h3').textContent.toLowerCase().includes(search) ||
+                product.querySelector('.product-description').textContent.toLowerCase().includes(search);
+            return matchesCategory && matchesSearch;
+        });
         
         const start = (page - 1) * productsPerPage;
         const end = start + productsPerPage;
@@ -37,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const pageNumbers = document.querySelectorAll('.pagination-numbers .pagination-btn');
 
     function updatePagination() {
-        const totalProducts = countProductsByCategory(currentCategory);
+        const totalProducts = countProductsByCategoryAndSearch(currentCategory, currentSearch);
         const totalPages = Math.ceil(totalProducts / productsPerPage);
         
         // Cập nhật trạng thái nút prev/next
@@ -57,14 +66,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (this.classList.contains('prev')) {
                 if (currentPage > 1) currentPage--;
             } else if (this.classList.contains('next')) {
-                const totalProducts = countProductsByCategory(currentCategory);
+                const totalProducts = countProductsByCategoryAndSearch(currentCategory, currentSearch);
                 const totalPages = Math.ceil(totalProducts / productsPerPage);
                 if (currentPage < totalPages) currentPage++;
             } else {
                 currentPage = parseInt(this.textContent);
             }
             
-            showProducts(currentPage, currentCategory);
+            showProducts(currentPage, currentCategory, currentSearch);
             updatePagination();
         });
     });
@@ -82,12 +91,25 @@ document.addEventListener('DOMContentLoaded', function() {
             currentCategory = this.getAttribute('data-category');
             currentPage = 1;
             
-            showProducts(currentPage, currentCategory);
+            showProducts(currentPage, currentCategory, currentSearch);
             updatePagination();
         });
     });
 
+    // Xử lý tìm kiếm
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('search');
+    
+    if (searchQuery) {
+        currentSearch = searchQuery.toLowerCase();
+        // Cập nhật giá trị ô tìm kiếm
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.value = searchQuery;
+        }
+    }
+
     // Khởi tạo
-    showProducts(currentPage, currentCategory);
+    showProducts(currentPage, currentCategory, currentSearch);
     updatePagination();
 }); 
