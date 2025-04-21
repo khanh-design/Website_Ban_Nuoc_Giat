@@ -54,7 +54,7 @@ function addToCart(productId) {
     // Chuyển hướng sang trang giỏ hàng sau 1 giây
     setTimeout(() => {
         window.location.href = 'gio-hang.html';
-    }, 1000);
+    }, 100);
 }
 
 // Xóa sản phẩm khỏi giỏ hàng
@@ -64,6 +64,9 @@ function removeFromCart(productId) {
     updateCartCount();
     renderCart();
     showNotification('Đã xóa sản phẩm khỏi giỏ hàng');
+    setTimeout(() => {
+        window.location.href = 'gio-hang.html';
+    }, 1000);
 }
 
 // Cập nhật số lượng sản phẩm
