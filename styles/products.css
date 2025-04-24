@@ -391,3 +391,15 @@ footer {
     transform: scale(1.1);
     box-shadow: 0 3px 8px rgba(231, 76, 60, 0.4);
 }
+/* Nav Icons Styles */
+#searchToggle {
+    color: #333;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+#searchToggle:hover {
+    color: #3498db;
+}

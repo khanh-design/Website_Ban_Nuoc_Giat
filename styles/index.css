@@ -608,3 +608,16 @@ footer {
 #searchToggle:hover {
     color: #3498db;
 }
+
+/* Nav Icons Styles */
+#searchToggle {
+    color: #333;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+#searchToggle:hover {
+    color: #3498db;
+}
